@@ -1,0 +1,94 @@
+.news{
+    text-transform: uppercase;
+    margin-left: 1rem;
+    width: 15rem;
+    border-bottom: 1px solid black;
+}
+ 
+.blockNews{
+    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.blockNews > section{
+    word-wrap: break-word;
+    width: 350px;
+    background-color: white;
+    border: 1px solid black;
+    text-align: justify;
+    padding: 12px;
+    overflow: hidden;
+
+}
+.blockNews > section > a {
+    text-decoration: none;
+
+}
+.imgSource{
+    float:left;
+    padding: 5px;
+}
+.resum {
+    width: 20rem;
+    height: 15rem;
+    
+    text-overflow: ellipsis;
+}
+.tableUser>table{
+    padding: auto;
+    margin:auto;
+    width: 80%;
+    
+}
+td {
+    padding: auto;
+    text-align :center;
+}
+
+thead,
+tfoot {
+    padding: auto;
+    background-color: green;
+    color: white;
+}
+.container-add{
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: white;
+    text-align: justify;
+    word-wrap: break-word;
+
+}
+.container-add>form{
+    text-align: center;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin: auto;
+    padding: 10px;
+}
+@media only screen and (max-width: 500px) {
+    .emails{
+        display: none;
+    }
+    .adresse{
+        display: none;
+    }
+    .resum {
+        width: auto;
+        height: 1rem;
+    }
+
+   
+}
+
+.button{
+    display: inline-block;
+
+}
