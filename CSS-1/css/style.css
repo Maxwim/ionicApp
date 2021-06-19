@@ -5,6 +5,14 @@ html, body {
     padding: 0;
     font-family: 'Nunito Sans', sans-serif;
 }
+.title > a {
+    text-decoration: none;
+    color: white;
+}
+.title:hover a {
+    text-decoration: none;
+    color: rgb(216, 216, 216);
+}
 .lg-form{
     margin: 20px;
     padding: 3rem;
