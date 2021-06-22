@@ -1,0 +1,159 @@
+.news{
+    text-transform: uppercase;
+    margin-left: 1rem;
+    width: 15rem;
+    border-bottom: 1px solid black;
+}
+ 
+.blockNews{
+    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.blockNews > section{
+    word-wrap: break-word;
+    width: 350px;
+    background-color: white;
+    border: 1px solid black;
+    text-align: justify;
+    padding: 12px;
+    overflow: hidden;
+
+}
+.blockNews > section > a {
+    text-decoration: none;
+
+}
+.imgSource{
+    float:left;
+    padding: 5px;
+}
+.resum {
+    width: 20rem;
+    height: 15rem;
+    
+    text-overflow: ellipsis;
+}
+.tableUser {
+    margin: 0%;
+    padding: 15px;
+    margin-top: 15px;
+}
+.tableUser>table{
+    padding: auto;
+    margin:auto;
+    width: 100%;
+    
+}
+
+.bTable>tr>td {
+    padding: auto;
+    text-align :center;
+    border: 1px solid black;
+  
+}
+
+.myTable > thead,
+tfoot {
+    padding: auto;
+    background-color: green;
+    color: white;
+}
+.container-add{
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: white;
+    text-align: justify;
+    word-wrap: break-word;
+
+}
+.container-add>form{
+    text-align: center;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin: auto;
+    padding: 10px;
+}
+.MyArticle {
+    width: 80%;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 50px;
+    text-align: justify;
+
+}
+.MyArticle > img {
+    padding: 20px;
+
+}
+.lg-form{
+    margin: 20px;
+    padding: 3rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 45%;
+    background-color: white;   
+}
+
+.lg-form > h1 {
+    text-align: center;
+
+    border: 1px solid blue; 
+
+}
+.lg > input{
+
+    text-align: center;
+    color: #000;
+    margin: 5px;
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+}
+.lg > .button{
+    text-align: center;
+    border-radius: 10px;
+    color: black;
+}
+.lg > .button:hover{
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+}
+.lg{
+    white-space: pre-line;
+    text-align: center;
+}
+@media only screen and (max-width: 690px) {
+    .emails, .adresse, .name, .lname{
+        display: none;
+    }
+    .resum {
+        width: auto;
+        height: 1rem;
+    }
+    .MyArticle {
+        
+        padding: 10px;
+    }
+    .MyArticle > img {
+        width: 85%;
+        margin: 15px;
+
+    }
+   
+}
+
+.button{
+    display: inline-block;
+
+}
