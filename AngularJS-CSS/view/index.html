@@ -1,0 +1,11 @@
+<div ng-controller="mainIndex">
+    <img src="https://i.ibb.co/H2RqFBq/background.jpg" height="300px" width="100%" title="MyImage"  >
+    <h2 class="news"><output>Les news</output></h2>
+        <div class="blockNews">
+        <section ng-repeat="article in articles | limitTo: 7">
+            <h2><a href="#!Article">{{article.titre}}</a></h2>
+            <img src="{{article.imgLink}}" width="100" height="100" title="MyImage" class="imgSource">
+            <p class="resum">{{article.text}}</p>
+        </section>
+    </div>
+</div>

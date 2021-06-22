@@ -1,0 +1,30 @@
+footer{
+    margin-top: 2rem;
+    resize: both;
+    flex: 0 0 auto;
+    border-top: 1px solid black;
+    width: auto;
+    background-color: #f111;
+}
+.foootersBlock {
+    margin: 2em;
+}
+.foootersBlock > h3 {
+    margin: 1em;
+}
+.container-footer{
+    
+    background-color:seashell;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+}
+@media only screen and (max-width: 760px) {
+    .foootersBlock{
+        display: none;
+    }
+}
+
