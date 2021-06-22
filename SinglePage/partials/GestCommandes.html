@@ -1,0 +1,43 @@
+<div ng-controller="mainCommandes">
+    <div class="container-add">
+        <!-- //<p style="text-align: center;">Ajouté une commande</p> -->
+        <form action="#" method="post">
+            <input type="text" placeholder="Information" />
+            <input type="text" placeholder="Information" />
+            <input type="text" placeholder="Information" />
+            <input type="text" placeholder="Information" /> <br>
+            <input type="submit" value="Ajouté" class="button" />
+        </form>
+    </div>
+    <!-- <p>{{name}}</p> -->
+    <div class="tableUser">
+        <table class="myTable">
+            <thead>
+                <tr>
+                    <!-- <th colspan="1">ID</th> -->
+                    <th colspan="1" class="name">Nom</th>
+                    <th colspan="1" class="lname">Prénom</th>
+                    <th colspan="1" class="emails">Emails</th>
+                    <th colspan="1" class="adresse">Adresse</th>
+                    <th colspan="1" >Modifier</th>
+                    <th colspan="1">Supprimer</th>
+                </tr>
+            </thead>
+
+            <!-- Utilise le fichier JSON -->
+            <p>{{datas.name}}</p>
+            <tbody class="bTable">
+                    <tr ng-repeat="datas in data | limitTo: 50">
+                        <!-- <td>{{datas.id}}</td> -->
+                        <td class="name">{{datas.name}}</td>
+                        <td class="lname">{{datas.lname}}</td>
+                        <td class="emails">{{datas.email}}</td>
+                        <td class="adresse">{{datas.adresse}}</td>
+                        <td><form action="#" method="post" id="modifier" name="modifier"><input type="text" name="id" id="id" value="{{datas.id}}"hidden=true><input type="submit" value="Modifier" class="buttona"></form>
+                        <td><form action="#" method="post" id="Supprimer" name="Supprimer"><input type="text" name="id" id="id" value="{{datas.id}}"hidden=true><input type="submit" value="Supprimer" class="buttons"></form>
+                    </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
