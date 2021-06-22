@@ -164,7 +164,7 @@ tfoot {
     text-align: center;
 }
 @media only screen and (max-width: 690px) {
-    .emails, .adresse, .name, .lname{
+    .emails, .adresse, .name{
         display: none;
     }
     .resum {
