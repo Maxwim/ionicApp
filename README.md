@@ -1,2 +1,1 @@
 # FRONT-END
-HTML, CSS, AngularJS
