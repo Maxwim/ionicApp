@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>indexConnect</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <IonItemDivider *ngFor="let test of data">
+      <div class="box">
+        <p class="titre">{{test.nameVille}}</p>
+        <img src="https://picsum.photos/200" alt="{{test.nameVille}" class="img">
+      <p class="date">{{test.dateAdd}}</p>
+      <p class="validation">{{test.validation}}</p>
+        </div>
+      </IonItemDivider>
+</ion-content>
+<ion-footer>
+  <p style="color: white; text-align: center;">hello world</p>
+</ion-footer>

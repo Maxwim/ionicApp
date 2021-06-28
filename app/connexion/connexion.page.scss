@@ -25,6 +25,7 @@ header{
        
 }
 .loginBox{
+    color: black;
     text-align: center;
     margin-left: 50%;
     margin-right: 50%;
@@ -34,23 +35,8 @@ header{
     border-radius: 7px;
 }
 .myButton{
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 3% 5%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 100%;
-    border-radius: 6px;
-    margin: 10px;
-}
-.myButton:hover{
-    // margin: 4px;
-    background-color: #000000; /* Green */
-    // border: none;
-    color: rgb(255, 255, 255);
 
+    margin: 15px;
 }
 .options{
     text-align: center; 
@@ -64,4 +50,13 @@ header{
     // background-color: rgb(0, 0, 0);
     border-radius: 6px;
     // margin: 500px;
+}
+.option:hover{
+    color:rgb(138, 138, 138);
+}
+.titre{
+    text-align: center;
+}
+.message  {
+    text-align: center;
 }
