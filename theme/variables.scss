@@ -83,7 +83,7 @@
    */
 
   body {
-    --ion-color-primary: #428cff;
+    --ion-color-primary: #2b40fa;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
     --ion-color-primary-contrast-rgb: 255,255,255;
@@ -197,7 +197,7 @@
    */
 
   .md body {
-    --ion-background-color: #121212;
+    --ion-background-color: #352b2b;
     --ion-background-color-rgb: 18,18,18;
 
     --ion-text-color: #ffffff;
@@ -233,4 +233,7 @@
 
     --ion-card-background: #1e1e1e;
   }
+}
+ion-footer{
+  background-color: #1f1f1f;
 }

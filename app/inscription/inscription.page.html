@@ -4,7 +4,7 @@
     <!-- <ion-title>connexion</ion-title> -->
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content >
   <h1 class="titre">Inscription</h1>
 
  
@@ -26,7 +26,10 @@
       <ion-label>Confirmer mot de passe : </ion-label>
       <ion-input type="password" required formControlName="passwordRepeat">   </ion-input>
     </ion-item>
-
+    <ion-item class="checkbox">
+      <ion-checkbox value="sausage" required formControlName="checkbox"></ion-checkbox>      
+      <ion-label>CGU</ion-label>
+    </ion-item>  
     <ion-button type="submit" class="myButton" expend="bloc" [disabled]="form.invalid">
       inscription
     </ion-button>
@@ -37,5 +40,5 @@
   </div>
 </ion-content>
 <ion-footer>
-  
+
 </ion-footer>

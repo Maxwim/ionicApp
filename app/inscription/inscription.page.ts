@@ -20,6 +20,7 @@ export class InscriptionPage {
     username: new FormControl('', [Validators.required, Validators.minLength(3)]), 
     password: new FormControl('', [Validators.required, Validators.minLength(3)]), 
     passwordRepeat: new FormControl('', [Validators.required, Validators.minLength(3)]), 
+    checkbox: new FormControl('',  [Validators.required,]),
   });
   onSubmit(){
     let emails = this.form.value.emails; 

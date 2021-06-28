@@ -6,14 +6,23 @@
 
 <ion-content>
     <IonItemDivider *ngFor="let test of data">
-      <div class="box">
+      <ion-card>
         <p class="titre">{{test.nameVille}}</p>
         <img src="https://picsum.photos/200" alt="{{test.nameVille}" class="img">
-      <p class="date">{{test.dateAdd}}</p>
-      <p class="validation">{{test.validation}}</p>
-        </div>
-      </IonItemDivider>
+        <p class="date">{{test.dateAdd}}</p>
+        <p class="validation">{{test.validation}}</p>
+      </ion-card>
+    </IonItemDivider>
 </ion-content>
 <ion-footer>
-  <p style="color: white; text-align: center;">hello world</p>
+  <div class="footer">
+    <ion-buttons end>
+      <button ion-button (click)="test()">
+        <ion-icon name="list" class="iconList"></ion-icon> 
+      </button>
+    </ion-buttons>  
+    <ion-icon name="add-circle"></ion-icon>
+    <ion-icon name="settings"></ion-icon>
+
+  </div>
 </ion-footer>
