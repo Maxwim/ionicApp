@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./index-connect.page.scss'],
 })
 export class IndexConnectPage {
-  private api = 'getLieu';
+  private api = 'getLieu'; // Permet de récupèrer tout les lieux de la base de donnée
+  // La c'est une simple requête, mais en ajoutant des fonctions à la requête http et la requête sql ça peu faire des choses bien
   data;
   
   constructor(private http: HttpClient) {
@@ -15,18 +16,18 @@ export class IndexConnectPage {
    }
    public message;
   generate(){
-    const url = 'http://localhost/ionic/PremierProjet/Server/API.php'; // Link is not really
+    const url = 'http://localhost/ionic/PremierProjet/Server/API.php'; // Simple API avec base de donnée et clef 
     const bodys = JSON.stringify({api: this.api});
     const headers = new HttpHeaders();
     const http = this.http;
     
-    // Content-Type: application/x-www-form-urlencoded
+    // header requête
     headers.set('Content-Type', 'application/json;charset=UTF-8');
     http.post(url, bodys, {headers: headers}).subscribe(
         (data) => {
-            // console.log(data['ConnexionMessage']);
-            this.data = data;
-            // console.log(this.data['lat'])
+            // Réponse de la requête en JSON utilisable avec angular directement dans .html
+            this.data = data; 
+         
 
           },        
           (err: HttpErrorResponse) => {
