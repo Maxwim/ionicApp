@@ -46,9 +46,9 @@ export class InscriptionPage {
         },
         (err: HttpErrorResponse) => {
             if (err.error instanceof Error) {
-                console.log('Connection impossible.');
+                this.message = 'Erreur app';
             } else {
-                console.log('Server.');
+                this.message = 'Erreur erreur réessayer plus tard'
             }
         }
     );

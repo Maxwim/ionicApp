@@ -10,7 +10,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 export class ConnexionPage {
   message = "";
   constructor(private http: HttpClient) {
-      // En gros ici je pourrai rajouté la génération d'une clef csrf ou la génération 
+      // En gros ici je pourrai rajouté la génération d'une clef csrf
    }
 
   // const datas = "";
@@ -33,15 +33,25 @@ export class ConnexionPage {
                                  username: username,
                                  password: password});
 
-    // let body = 'api='+api+'&username='+username+'&password='+password;
     const headers = new HttpHeaders();
     const http = this.http;
-    // Content-Type: application/x-www-form-urlencoded
     headers.set('Content-Type', 'application/json;charset=UTF-8');
     http.post(url, bodys, {headers: headers}).subscribe(
         (data) => {
             console.log(data['ConnexionMessage']);
             this.message = data['ConnexionMessage'];
-          },);
+            // 
+            // if(this.message == 'fasle'){
+            //   this.message = 'Mot de passe incorrect ?';
+            // }
+          },
+          (err: HttpErrorResponse) => {
+            if (err.error instanceof Error) {
+                this.message = 'Erreur app';
+            } else {
+                this.message = 'Erreur erreur réessayer plus tard'
+            }
+        }
+        );
   }
 }

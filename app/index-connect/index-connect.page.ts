@@ -13,11 +13,13 @@ export class IndexConnectPage {
   constructor(private http: HttpClient) {
     this.data = this.generate();   
    }
+   public message;
   generate(){
     const url = 'http://localhost/ionic/PremierProjet/Server/API.php'; // Link is not really
     const bodys = JSON.stringify({api: this.api});
     const headers = new HttpHeaders();
     const http = this.http;
+    
     // Content-Type: application/x-www-form-urlencoded
     headers.set('Content-Type', 'application/json;charset=UTF-8');
     http.post(url, bodys, {headers: headers}).subscribe(
@@ -29,9 +31,9 @@ export class IndexConnectPage {
           },        
           (err: HttpErrorResponse) => {
             if (err.error instanceof Error) {
-                console.log('Connection impossible.');
+                this.message = 'Erreur';
             } else {
-                console.log('Server.');
+              this.message = 'Erreur';
             }
         });
     
