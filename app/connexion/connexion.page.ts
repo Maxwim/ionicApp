@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-connexion',
   templateUrl: './connexion.page.html',
@@ -11,8 +12,8 @@ export class ConnexionPage {
   message = "";
   // PHP a besoin du format "api" pour sélectionné l'action
   private api = 'newClient';
-  constructor(private http: HttpClient) {
-
+  constructor(private http: HttpClient, public loadingController: LoadingController) {
+    
    }
 
   // const datas = "";
@@ -22,7 +23,7 @@ export class ConnexionPage {
 
   });
   // Click sur le bouton onSubmit()
-  onSubmit(){
+  async onSubmit(){
     // Récupération des champs de la form
     let username = this.form.value.username; 
     let password = this.form.value.password;
@@ -30,10 +31,19 @@ export class ConnexionPage {
     this.logIn(username, password);
     
   }
-  logIn(username: string, password: string) {
+  
+   async logIn(username: string, password: string) {
+    this.message = "wait...";
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Chargement...',
+      // duration: 5000
+    });
+    await loading.present();
+    
     // Déclaration de l'url du serveur 
     // Autorisé la prauvenance de service externe sur php
-    const url = 'http://localhost/ionic/PremierProjet/Server/API.php'; // Link is not really
+    const url = 'http://localhost/ionic/PremierProjet/Server/API.php'; 
     // Informations a passer dans la requête
     const bodys = JSON.stringify({api: this.api,
                                  username: username,
@@ -48,20 +58,26 @@ export class ConnexionPage {
         (data) => {
             console.log(data['ConnexionMessage']);
             // La c'est juste un exemple pour tester les réponses d'un serveur
-            this.message = data['ConnexionMessage'];
+            
             // Si jamais le serveur vérifier dans la base de donnée 
             // 
-            // if(this.message == 'fasle'){
-            //   this.message = 'Mot de passe incorrect ?';
-            // }
+            if(data['ConnexionMessage'] == 'Connexion'){
+              // onDidDismiss
+              this.message = 'Réponse ok';
+              loading.dismiss();
+            }
+
           },
           (err: HttpErrorResponse) => {
             if (err.error instanceof Error) {
+              
                 // Erreur client, non déterminé
                 this.message = 'Erreur app';
+                loading.dismiss();
             } else {
                 // Erreur serveur, connexion mysql ou script.
                 this.message = 'Erreur erreur réessayer plus tard'
+                loading.dismiss();
             }
         }
         );

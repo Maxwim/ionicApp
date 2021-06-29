@@ -16,8 +16,17 @@
   <div id="container">
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    <a href="/connexion">Connexion</a><p>   </p>
-    <a href="/inscription">Inscription</a><p>   </p>
-    <a href="/index-connect">index user connecter</a>
+    <!-- <a ">Connexion</a><p>   </p> -->
+    <ion-button type="submit" expend="bloc" [routerLink]="['/connexion']">
+      Connexion
+    </ion-button><br>
+    <ion-button type="submit" expend="bloc" [routerLink]="['/inscription']">
+      inscription
+    </ion-button><br>
+    <ion-button type="submit" expend="bloc" [routerLink]="['/index-connect']">
+      "panel"
+    </ion-button>
+    <!-- <a href="/inscription">Inscription</a><p>   </p>
+    <a href="/index-connect">index user connecter</a> -->
   </div>
 </ion-content>

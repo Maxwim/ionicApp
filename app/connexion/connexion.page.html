@@ -2,8 +2,7 @@
 
     <ion-toolbar >
       <ion-item>
-      <a href="/home"><ion-icon name="caret-back-outline" class="toolbar"></ion-icon></a>
-
+        <ion-icon name="caret-back-outline" class="toolbar" [routerLink]="['/']"></ion-icon>
       </ion-item>
       <!-- <ion-title>connexion</ion-title> -->
     </ion-toolbar>
@@ -25,11 +24,11 @@
       </ion-button>
     </form>
     <div class="message">
-      <p>{{message}}</p>
+      <ion-label>{{message}}</ion-label>
     </div>
     <div class="options">
-      <p><a href="#" class="option">Mot de passe oublié ?</a></p>
-      <p><a href="/inscription" class="option">Inscription.</a></p>
+      <p class="option" [routerLink]="['/']">Mot de passe oublié ?</p>
+      <p class="option" [routerLink]="['/inscription']" >Inscription.</p>
     </div>
 </ion-content>
 <ion-footer>

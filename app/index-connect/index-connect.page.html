@@ -8,7 +8,6 @@
       <ion-card>
         <p class="titre">{{test.nameVille}}
         <form [formGroup]="box" class="loginForm">
-        <!-- <p>""</p> -->
           <ion-input value="{{test.id_lieu}}"></ion-input>
           <ion-buttons end>
           <button ion-button (click)="goArticle()">
@@ -16,18 +15,13 @@
           </button>
         </ion-buttons>
       </form>
-      <!-- <p class="titre" >{{test.id_lieu}}</p> -->
-      <!-- <p class="titre">{{test.nameVille}}</p>
-      <img src="https://picsum.photos/200" alt="{{test.nameVille}" class="img">
-      <p class="date">{{test.dateAdd}}</p>
-      <p class="validation">{{test.validation}}</p> -->
     </ion-card>
   </IonItemDivider>
 </ion-content>
 <ion-footer>
   <div class="footer">
     <ion-buttons end>
-      <button ion-button (click)="test()">
+      <button ion-button (click)="index()">
         <ion-icon name="list" class="iconList"></ion-icon> 
       </button>
     </ion-buttons>  

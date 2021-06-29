@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 // import {HttpClient} from '@angular/common/http';
 // import { registerLocaleData } from '@angular/common';
+import { LoadingController } from '@ionic/angular';
+
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 @Component({
@@ -10,7 +12,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
   styleUrls: ['./inscription.page.scss'],
 })
 export class InscriptionPage {
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, public loadingController: LoadingController){
     // private auth: AuthService,
   }
    message = '';
@@ -31,7 +33,13 @@ export class InscriptionPage {
     this.register(api ,emails, username, password, passwordRepeat);
   }
   
-  register(api: string, emails: string, username: string, password: string, passwordRepeat: string) {
+  async register(api: string, emails: string, username: string, password: string, passwordRepeat: string) {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Chargement...',
+      // duration: 5000
+    });
+    await loading.present();
     const url = 'http://localhost/ionic/PremierProjet/Server/API.php'; // Link is not really
     const body = JSON.stringify({api: api,
                                  emails: emails,
@@ -44,12 +52,19 @@ export class InscriptionPage {
         (data) => {
             console.log(data);
               this.message = data['InscriptionMessage'];
+              loading.dismiss();
+
         },
         (err: HttpErrorResponse) => {
             if (err.error instanceof Error) {
                 this.message = 'Erreur app';
+                loading.dismiss();
+
             } else {
+
                 this.message = 'Erreur erreur réessayer plus tard'
+                loading.dismiss();
+
             }
         }
     );

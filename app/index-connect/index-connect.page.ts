@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse,HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-index-connect',
   templateUrl: './index-connect.page.html',
@@ -11,11 +11,13 @@ export class IndexConnectPage {
   // La c'est une simple requête, mais en ajoutant des fonctions à la requête http et la requête sql ça peu faire des choses bien
   data;
   
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, protected router: Router) {
     this.data = this.generate();   
    }
    public message;
-  generate(){
+
+   generate(){ 
+     
     const url = 'http://localhost/ionic/PremierProjet/Server/API.php'; // Simple API avec base de donnée et clef 
     const bodys = JSON.stringify({api: this.api});
     const headers = new HttpHeaders();
@@ -23,6 +25,7 @@ export class IndexConnectPage {
     
     // header requête
     headers.set('Content-Type', 'application/json;charset=UTF-8');
+
     http.post(url, bodys, {headers: headers}).subscribe(
         (data) => {
             // Réponse de la requête en JSON utilisable avec angular directement dans .html
@@ -37,10 +40,12 @@ export class IndexConnectPage {
               this.message = 'Erreur';
             }
         });
-    
-  }
-  test(){
+      }
+  index(){
     console.log('Click');
+  }
+  goArticle(){
+    this.router.navigate(['/articles']);
   }
   
 }

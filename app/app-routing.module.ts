@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'index-connect',
     loadChildren: () => import('./index-connect/index-connect.module').then( m => m.IndexConnectPageModule)
+  },  {
+    path: 'articles',
+    loadChildren: () => import('./articles/articles.module').then( m => m.ArticlesPageModule)
   },
+
 ];
 
 @NgModule({

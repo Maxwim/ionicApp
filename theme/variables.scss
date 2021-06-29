@@ -237,3 +237,19 @@
 ion-footer{
   background-color: #1f1f1f;
 }
+
+.toolbar{
+  margin: 1rem;
+  // display: flex;
+  color: white;
+  flex-wrap: wrap;
+  text-align: left;
+
+}
+
+.toolbar:hover{
+  color: rgb(180, 180, 180);
+}
+.my-custom-class{
+  color: white;
+}
