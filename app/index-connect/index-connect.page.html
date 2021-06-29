@@ -3,16 +3,26 @@
     <ion-title>indexConnect</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
+  <ion-content> 
     <IonItemDivider *ngFor="let test of data">
       <ion-card>
-        <p class="titre">{{test.nameVille}}</p>
-        <img src="https://picsum.photos/200" alt="{{test.nameVille}" class="img">
-        <p class="date">{{test.dateAdd}}</p>
-        <p class="validation">{{test.validation}}</p>
-      </ion-card>
-    </IonItemDivider>
+        <p class="titre">{{test.nameVille}}
+        <form [formGroup]="box" class="loginForm">
+        <!-- <p>""</p> -->
+          <ion-input value="{{test.id_lieu}}"></ion-input>
+          <ion-buttons end>
+          <button ion-button (click)="goArticle()">
+            <img src="https://picsum.photos/200" alt="{{test.nameVille}" class="img">
+          </button>
+        </ion-buttons>
+      </form>
+      <!-- <p class="titre" >{{test.id_lieu}}</p> -->
+      <!-- <p class="titre">{{test.nameVille}}</p>
+      <img src="https://picsum.photos/200" alt="{{test.nameVille}" class="img">
+      <p class="date">{{test.dateAdd}}</p>
+      <p class="validation">{{test.validation}}</p> -->
+    </ion-card>
+  </IonItemDivider>
 </ion-content>
 <ion-footer>
   <div class="footer">
@@ -23,6 +33,5 @@
     </ion-buttons>  
     <ion-icon name="add-circle"></ion-icon>
     <ion-icon name="settings"></ion-icon>
-
   </div>
 </ion-footer>
