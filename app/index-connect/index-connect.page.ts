@@ -1,21 +1,32 @@
 import { HttpClient, HttpErrorResponse,HttpHeaders } from '@angular/common/http';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+// import { DOCUMENT } from '@angular/common'; 
+// import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-index-connect',
   templateUrl: './index-connect.page.html',
   styleUrls: ['./index-connect.page.scss'],
 })
+
 export class IndexConnectPage {
   private api = 'getLieu'; // Permet de récupèrer tout les lieux de la base de donnée
   // La c'est une simple requête, mais en ajoutant des fonctions à la requête http et la requête sql ça peu faire des choses bien
   data;
-  
+  // element: HTMLElement; 
   constructor(private http: HttpClient, protected router: Router) {
     this.data = this.generate();   
    }
    public message;
+   form = new FormGroup({
+    id_article: new FormControl('', [Validators.required]), 
+  });
 
+  //  box = new FormGroup({
+  //   id_article: new FormControl('', [Validators.required]),   
+  // });
    generate(){ 
      
     const url = 'http://localhost/ionic/PremierProjet/Server/API.php'; // Simple API avec base de donnée et clef 
@@ -42,9 +53,13 @@ export class IndexConnectPage {
         });
       }
   index(){
-    console.log('Click');
+    this.router.navigate(['/']);
   }
   goArticle(){
+
+    // console.log(this.form.value.id_article); ?
+
+    // console.log(id_article);
     this.router.navigate(['/articles']);
   }
   

@@ -4,19 +4,16 @@
   </ion-toolbar>
 </ion-header>
   <ion-content> 
-    <IonItemDivider *ngFor="let test of data">
-      <ion-card>
-        <p class="titre">{{test.nameVille}}
-        <form [formGroup]="box" class="loginForm">
-          <ion-input value="{{test.id_lieu}}"></ion-input>
-          <ion-buttons end>
-          <button ion-button (click)="goArticle()">
-            <img src="https://picsum.photos/200" alt="{{test.nameVille}" class="img">
-          </button>
-        </ion-buttons>
-      </form>
+    <ion-card *ngFor="let test of data">
+      <form  [formGroup]="form" (submit)="goArticle()">
+          <p class="titre">{{test.nameVille}}</p>
+          <!-- [(ngModel)]='username' -->
+            <ion-input formControlName="id_article" ></ion-input>
+            <button ion-button type="submit">
+              <img src="https://picsum.photos/200" alt="{{test.nameVille}" class="img">
+            </button>
+        </form>
     </ion-card>
-  </IonItemDivider>
 </ion-content>
 <ion-footer>
   <div class="footer">
