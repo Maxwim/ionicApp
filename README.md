@@ -9,6 +9,6 @@ Petit bug dans l'appli, quand je charge une page article puis je fais un retour,
 
 Bon le bug venait de l'envoi du formulaire avec les inputs en get
 
-Le modèle BDD utilisé pour le site, ce n'est pas ce que je dois apprendre mais ça m'aide beaucoup à comprendre la direction des données <br>
+Le modèle BDD utilisé pour l'appli, ce n'est pas ce que je dois apprendre mais ça m'aide beaucoup à comprendre la direction des données <br>
 
 <a href="https://ibb.co/bdtLRkQ"><img src="https://i.ibb.co/zfdbHzQ/Model-My-SQL.png" alt="Model-My-SQL" border="0"></a>
